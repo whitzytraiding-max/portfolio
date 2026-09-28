@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michael Carrihill — Full-Stack & Mobile Developer</title>
+<meta name="description" content="Full-stack and mobile developer. React, TypeScript, Node.js, PostgreSQL, React Native and AI features. Five apps on the App Store and a live ordering site for a real bakery.">
+<meta property="og:title" content="Michael Carrihill — Full-Stack & Mobile Developer">
+<meta property="og:description" content="I build complete products and ship them: apps on the App Store, a live bakery ordering site, and LLM features in production.">
+<meta property="og:image" content="assets/web-honey-budget-web.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #faf7f2; --card: #ffffff; --ink: #1f2a33; --muted: #5d6973; --line: #e8e2d8;
+    --accent: #1f7a72; --accent-soft: #e3f1ef; --warm: #f4ecdf; --shadow: 0 1px 2px rgba(31,42,51,.05), 0 8px 24px rgba(31,42,51,.06);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #151a1e; --card: #1d2429; --ink: #e9edf0; --muted: #9aa6ae; --line: #2c353c; --accent: #5cc2b7; --accent-soft: #1f3432; --warm: #232b30; --shadow: none; }
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 16px/1.6 Inter, system-ui, -apple-system, Segoe UI, sans-serif; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  nav { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; }
+  nav .logo { font-weight: 700; color: var(--ink); }
+  nav .links a { margin-left: 18px; color: var(--muted); font-size: 15px; }
+  header.hero { padding: 48px 0 32px; }
+  .eyebrow { display: inline-block; background: var(--accent-soft); color: var(--accent); font-weight: 600; font-size: 13px; padding: 4px 12px; border-radius: 999px; }
+  h1 { font-family: Fraunces, Georgia, serif; font-size: clamp(36px, 6vw, 58px); line-height: 1.08; margin: 16px 0 12px; letter-spacing: -.5px; }
+  .lead { font-size: 19px; color: var(--muted); max-width: 720px; margin: 0 0 24px; }
+  .cta { display: flex; flex-wrap: wrap; gap: 10px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; padding: 11px 18px; border-radius: 12px; font-weight: 600; font-size: 15px; border: 1px solid var(--line); background: var(--card); color: var(--ink); }
+  .btn.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+  .btn:hover { text-decoration: none; transform: translateY(-1px); }
+  .avail { margin-top: 18px; font-size: 14px; color: var(--muted); }
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 36px 0 8px; }
+  .stat { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 16px 18px; box-shadow: var(--shadow); }
+  .stat b { display: block; font-size: 26px; font-family: Fraunces, Georgia, serif; }
+  .stat span { color: var(--muted); font-size: 14px; }
+  section { padding: 40px 0; }
+  h2 { font-family: Fraunces, Georgia, serif; font-size: 30px; margin: 0 0 6px; }
+  .sub { color: var(--muted); margin: 0 0 24px; }
+  .grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+  .card img.shot { width: 100%; aspect-ratio: 16/10; object-fit: cover; object-position: top; border-bottom: 1px solid var(--line); background: var(--warm); }
+  .card .phones { display: flex; gap: 8px; padding: 14px 14px 0; background: var(--warm); }
+  .card .phones img { width: calc(33.3% - 6px); border-radius: 10px; }
+  .card .body { padding: 18px 20px 20px; display: flex; flex-direction: column; gap: 8px; flex: 1; }
+  .card h3 { margin: 0; font-size: 19px; display: flex; align-items: center; gap: 10px; }
+  .card h3 img { width: 30px; height: 30px; border-radius: 8px; }
+  .tag { display: inline-block; font-size: 12px; font-weight: 600; padding: 2px 9px; border-radius: 999px; background: var(--accent-soft); color: var(--accent); }
+  .card p { margin: 0; color: var(--muted); font-size: 15px; }
+  .stack { font-size: 13px; color: var(--muted); }
+  .links2 { margin-top: auto; display: flex; gap: 14px; font-weight: 600; font-size: 14px; flex-wrap: wrap; }
+  .feature { grid-column: 1 / -1; display: grid; grid-template-columns: 1.1fr 1fr; }
+  .feature .phones { padding: 18px; align-items: center; }
+  .small { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  .mini { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+  .mini h4 { margin: 0 0 4px; display: flex; gap: 8px; align-items: center; font-size: 16px; }
+  .mini h4 img { width: 24px; height: 24px; border-radius: 6px; }
+  .mini p { margin: 0; font-size: 14px; color: var(--muted); }
+  .skills { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  .skills div { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; }
+  .skills b { display: block; margin-bottom: 4px; }
+  .skills span { font-size: 14px; color: var(--muted); }
+  .about { display: grid; grid-template-columns: 1.3fr 1fr; gap: 24px; }
+  .about p { margin: 0 0 12px; }
+  .box { background: var(--warm); border-radius: 16px; padding: 18px 20px; }
+  .box ul { margin: 6px 0 0; padding-left: 18px; }
+  footer { padding: 36px 0 48px; color: var(--muted); font-size: 14px; border-top: 1px solid var(--line); margin-top: 24px; }
+  @media (max-width: 820px) {
+    .grid, .feature, .about { grid-template-columns: 1fr; }
+    .small { grid-template-columns: 1fr 1fr; }
+    .skills { grid-template-columns: 1fr 1fr; }
+    .stats { grid-template-columns: 1fr; }
+    nav .links a:not(.keep) { display: none; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <a class="logo" href="#">Michael Carrihill</a>
+    <div class="links"><a href="#work">Work</a><a href="#skills">Skills</a><a href="#about">About</a><a class="keep" href="#contact">Contact</a></div>
+  </nav>
+
+  <header class="hero">
+    <span class="eyebrow">Open to remote roles · relocation considered</span>
+    <h1>Full-stack &amp; mobile developer who ships complete products.</h1>
+    <p class="lead">React, TypeScript, Node.js and PostgreSQL on the web; React Native and Capacitor on iOS; LLM features in production. I take products from idea to App Store: backend, database, auth, payments, release and the marketing video.</p>
+    <div class="cta">
+      <a class="btn primary" href="Michael_Carrihill_CV.pdf" download>Download CV</a>
+      <a class="btn" href="https://www.linkedin.com/in/michaelcarrihill">LinkedIn</a>
+      <a class="btn" href="https://github.com/whitzytraiding-max">GitHub</a>
+      <a class="btn" href="mailto:mcarrihill@outlook.com">mcarrihill@outlook.com</a>
+    </div>
+    <p class="avail">Based in Myanmar (UTC+6:30): a full working-day overlap with Asia-Pacific and the morning with Europe.</p>
+    <div class="stats">
+      <div class="stat"><b>5 apps</b><span>live on the App Store under my developer account</span></div>
+      <div class="stat"><b>1 real business</b><span>a bakery takes orders and payments through my site</span></div>
+      <div class="stat"><b>5+ products</b><span>with LLM features in production (tool calling, voice, docs → quizzes)</span></div>
+    </div>
+  </header>
+
+  <section id="work">
+    <h2>Live work</h2>
+    <p class="sub">Everything here is running with real users. Not tutorials.</p>
+    <div class="grid">
+      <article class="card feature">
+        <div class="phones"><img src="assets/shot-awaken-real-life-rpg-0.jpg" alt="Awaken screenshot"><img src="assets/shot-awaken-real-life-rpg-1.jpg" alt="Awaken screenshot"><img src="assets/shot-awaken-real-life-rpg-2.jpg" alt="Awaken screenshot"></div>
+        <div class="body">
+          <h3><img src="assets/icon-awaken-real-life-rpg.png" alt="">Awaken: Real-Life RPG <span class="tag">App Store · live subscriptions</span></h3>
+          <p>A fitness app where real workouts and daily quests earn XP, levels and ranks. Quests are verified, not ticked: workouts, steps and sleep through Apple Health, water and meals through on-device photo checks. Timed "Gates" add real stakes, with in-app subscriptions.</p>
+          <p class="stack">React Native (Expo) · TypeScript · HealthKit · StoreKit</p>
+          <div class="links2"><a href="https://apps.apple.com/us/app/awaken-real-life-rpg/id6786354486">View on the App Store →</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="shot" src="assets/web-honey-budget-web.jpg" alt="Honey Budget website">
+        <div class="body">
+          <h3><img src="assets/icon-honey-budget.png" alt="">Honey Budget <span class="tag">App Store + web</span></h3>
+          <p>Couples budgeting: shared budgets, bills, savings goals and debt, plus an AI finance coach that uses tool calling to read and act on the couple's real numbers.</p>
+          <p class="stack">React · Node/Express · PostgreSQL/Prisma · Capacitor · Vercel + Render</p>
+          <div class="links2"><a href="https://honey-budget-landing.vercel.app">Website →</a><a href="https://apps.apple.com/us/app/honey-budget/id6764298365">App Store →</a><a href="https://github.com/whitzytraiding-max/honey-budget-api">API code →</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="shot" src="assets/web-bread-butter.jpg" alt="Bloom and Butter Archives website">
+        <div class="body">
+          <h3>Bloom &amp; Butter Archives <span class="tag">Real business</span></h3>
+          <p>The ordering site a real home bakery runs on: catalogue with pack-size variants, cart, pickup or delivery, KPay payments, an admin panel for products and orders, and iOS web-push notifications.</p>
+          <p class="stack">Next.js · PostgreSQL (Neon) · Vercel</p>
+          <div class="links2"><a href="https://bread-and-butter-archives.vercel.app">Visit the shop →</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="shot" src="assets/web-brain-bot.jpg" alt="Brain Bot">
+        <div class="body">
+          <h3>Brain Bot <span class="tag">Used in teacher training</span></h3>
+          <p>A voice-first AI learning assistant for children aged 4–7 with two characters (Ellie answers, Brainy Bot gives clues). Used in teacher training at the school where I teach.</p>
+          <p class="stack">Next.js · TypeScript · Groq · Tailwind</p>
+          <div class="links2"><a href="https://brain-bot-omega.vercel.app">Try it →</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <img class="shot" src="assets/web-minna-tango.jpg" alt="Minna no Tango">
+        <div class="body">
+          <h3>Minna no Tango <span class="tag">Live</span></h3>
+          <p>A Japanese vocabulary trainer covering 25 lessons and 1,033 words, with cross-device sync through a personal sync code merged on the server.</p>
+          <p class="stack">Next.js · Neon PostgreSQL · Vercel</p>
+          <div class="links2"><a href="https://minna-tango.vercel.app">Try it →</a></div>
+        </div>
+      </article>
+    </div>
+
+    <h2 style="margin-top:40px;font-size:24px">More products</h2>
+    <div class="small" style="margin-top:14px">
+      <div class="mini"><h4>Whitzy Notes</h4><p>Upload any PDF and get flashcards, quizzes and mind maps. Next.js · Claude API. <a href="https://whitzy-notes.vercel.app">Live →</a></p></div>
+      <div class="mini"><h4>Morgana</h4><p>Streaming, multi-conversation AI chat assistant. Next.js · Groq. <a href="https://morgana-five.vercel.app">Live →</a></p></div>
+      <div class="mini"><h4>PostFlow AI</h4><p>Scheduling autopilot that posts my own content to Instagram and YouTube through the official APIs. Python · PyQt6 · SQLite.</p></div>
+      <div class="mini"><h4>PipLog</h4><p>AI trading journal: log trades by chart upload, voice or text, with dashboards and a coach. React · Node · PostgreSQL.</p></div>
+      <div class="mini"><h4>Video pipelines</h4><p>Local generative-video pipelines (ComfyUI, Flux, Wan 2.2, ffmpeg) that produce the ads and teaching videos for my products and classroom.</p></div>
+      <div class="mini"><h4>Kids' AI research app</h4><p>Built with my wife: voice Q&amp;A that teaches children to research safely with AI; a school-branded edition is in use.</p></div>
+    </div>
+
+    <h2 style="margin-top:40px;font-size:24px">Games</h2>
+    <div class="small" style="margin-top:14px">
+      <div class="mini"><h4><img src="assets/icon-stax-blocks.png" alt="">STAX Blocks</h4><p>Block puzzle for iOS, built in Godot. <a href="https://apps.apple.com/us/app/stax-blocks/id6778501101">App Store →</a></p></div>
+      <div class="mini"><h4><img src="assets/icon-veil-break.png" alt="">VeilBreak</h4><p>Hex chain-matching puzzle with 75 hand-tuned levels. <a href="https://apps.apple.com/us/app/veil-break/id6778013910">App Store →</a></p></div>
+      <div class="mini"><h4><img src="assets/icon-highway-merge.png" alt="">Highway Merge</h4><p>Casual merge game for iOS. <a href="https://apps.apple.com/us/app/highway-merge/id6782659167">App Store →</a></p></div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <p class="sub">What I use in the products above, in production.</p>
+    <div class="skills">
+      <div><b>Front end</b><span>React, Next.js, TypeScript, Tailwind, Vite</span></div>
+      <div><b>Mobile</b><span>React Native / Expo, Capacitor, SwiftUI, App Store release, StoreKit, HealthKit</span></div>
+      <div><b>Back end &amp; data</b><span>Node.js, Express, FastAPI, PostgreSQL, Prisma, SQLite, REST, JWT, OAuth</span></div>
+      <div><b>AI</b><span>Claude, Groq and Gemini APIs, tool calling, voice (TTS/STT), ComfyUI pipelines</span></div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="about">
+      <div>
+        <p>I'm a South African developer living in Myanmar, where I also teach English to preschool classes. I build products end to end and put them in front of real users quickly, then improve them based on what people actually do.</p>
+        <p>That means owning the unglamorous parts too: databases and migrations, auth and payments, App Store review, hosting, monitoring, and the short-form videos that market the apps. I use AI heavily in how I build, and I build AI into products where it genuinely helps the user.</p>
+      </div>
+      <div class="box">
+        <b>Education</b>
+        <ul>
+          <li>National Certificate: IT Systems Development (NQF 5), MICT SETA, 2026</li>
+          <li>120-hour TEFL / TESOL, Distinction, 2025</li>
+          <li>AS Level Information Technology</li>
+          <li>South African National Senior Certificate</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Let's talk</h2>
+    <p class="sub">Open to full-time remote roles, and to relocation for the right team.</p>
+    <div class="cta">
+      <a class="btn primary" href="mailto:mcarrihill@outlook.com">Email me</a>
+      <a class="btn" href="https://www.linkedin.com/in/michaelcarrihill">LinkedIn</a>
+      <a class="btn" href="Michael_Carrihill_CV.pdf" download>Download CV</a>
+    </div>
+  </section>
+
+  <footer>© 2026 Michael Carrihill</footer>
+</div>
+</body>
+</html>
